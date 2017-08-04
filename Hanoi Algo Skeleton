@@ -1,0 +1,21 @@
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Move(3,"START","End","Aux");            //ERROR IN CALLING FOLLOW PERIMETER FOR NAMING CHECKING
+            Console.ReadLine();
+        }
+
+        public static void Move(int n, string beginning, string end, string auxiliary)
+        {
+            
+            //base case 
+            if (n > 0)
+            {
+                Move(n-1,beginning,auxiliary,end);
+                Console.WriteLine("Move disk {0} from  {1} to  {2}", n, beginning, end);
+                Move(n-1, auxiliary, end,beginning);
+            }
+        }
+
+    }
